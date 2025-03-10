@@ -1,0 +1,241 @@
+.payment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.plans-section {
+    margin-bottom: 4rem;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.plan-card {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card.featured {
+    border: 2px solid #3498db;
+}
+
+.popular-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.price {
+    margin: 1rem 0;
+}
+
+.amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.period {
+    color: #7f8c8d;
+}
+
+.savings {
+    color: #27ae60;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan-features li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.plan-features i {
+    color: #27ae60;
+    margin-right: 1rem;
+}
+
+.select-plan-btn {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.select-plan-btn:hover {
+    background: #2980b9;
+}
+
+/* Checkout Section */
+.checkout-section {
+    display: none;
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-section.active {
+    display: block;
+}
+
+.checkout-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+.order-summary {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.selected-plan {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.payment-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+label {
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+input {
+    padding: 0.75rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.card-input-wrapper {
+    position: relative;
+}
+
+.card-icons {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 0.5rem;
+    color: #7f8c8d;
+}
+
+.secure-payment {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.pay-now-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pay-now-btn:hover {
+    background: #219a52;
+}
+
+@media (max-width: 768px) {
+    .payment-container {
+        padding: 1rem;
+    }
+
+    .checkout-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .card-icons {
+        display: none;
+    }
+}

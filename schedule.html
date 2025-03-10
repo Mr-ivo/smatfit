@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule - FitLife Gym</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="schedule.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="mobile-logo">FitLife</div>
+        <div class="user-initials">JD</div>
+    </header>
+
+    <header>
+        <div class="logo">
+            <h1>FitLife</h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="schedule.html" class="active">Schedule</a></li>
+                <li><a href="#" class="user-profile">
+                    <img src="https://via.placeholder.com/32" alt="Profile" class="profile-pic">
+                    <span>John Doe</span>
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="schedule-container">
+        <div class="schedule-header">
+            <div class="schedule-title">
+                <h1>Class Schedule</h1>
+                <p>Find and book your next workout session</p>
+            </div>
+            
+            <div class="schedule-actions">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchClasses" placeholder="Search classes...">
+                </div>
+                
+                <div class="date-navigation">
+                    <button class="date-nav-btn" id="prevWeek">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="current-date">
+                        <span id="currentMonth">March</span>
+                        <span id="currentYear">2025</span>
+                    </div>
+                    <button class="date-nav-btn" id="nextWeek">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="filter-chips">
+                <button class="filter-chip active" data-filter="all">
+                    <span>All Classes</span>
+                </button>
+                <button class="filter-chip" data-filter="yoga">
+                    <i class="fas fa-om"></i>
+                    <span>Yoga</span>
+                </button>
+                <button class="filter-chip" data-filter="hiit">
+                    <i class="fas fa-bolt"></i>
+                    <span>HIIT</span>
+                </button>
+                <button class="filter-chip" data-filter="strength">
+                    <i class="fas fa-dumbbell"></i>
+                    <span>Strength</span>
+                </button>
+                <button class="filter-chip" data-filter="cardio">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Cardio</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="schedule-calendar">
+            <div class="weekdays">
+                <div class="weekday">
+                    <span class="day-name">Mon</span>
+                    <span class="day-date">10</span>
+                </div>
+                <div class="weekday active">
+                    <span class="day-name">Tue</span>
+                    <span class="day-date">11</span>
+                </div>
+                <div class="weekday">
+                    <span class="day-name">Wed</span>
+                    <span class="day-date">12</span>
+                </div>
+                <div class="weekday">
+                    <span class="day-name">Thu</span>
+                    <span class="day-date">13</span>
+                </div>
+                <div class="weekday">
+                    <span class="day-name">Fri</span>
+                    <span class="day-date">14</span>
+                </div>
+                <div class="weekday">
+                    <span class="day-name">Sat</span>
+                    <span class="day-date">15</span>
+                </div>
+                <div class="weekday">
+                    <span class="day-name">Sun</span>
+                    <span class="day-date">16</span>
+                </div>
+            </div>
+
+            <div class="schedule-timeline">
+                <div class="timeline-hours">
+                    <div class="hour">6:00 AM</div>
+                    <div class="hour">7:00 AM</div>
+                    <div class="hour">8:00 AM</div>
+                    <div class="hour">9:00 AM</div>
+                    <div class="hour">10:00 AM</div>
+                    <div class="hour">11:00 AM</div>
+                    <div class="hour">12:00 PM</div>
+                    <div class="hour">1:00 PM</div>
+                    <div class="hour">2:00 PM</div>
+                    <div class="hour">3:00 PM</div>
+                    <div class="hour">4:00 PM</div>
+                    <div class="hour">5:00 PM</div>
+                    <div class="hour">6:00 PM</div>
+                    <div class="hour">7:00 PM</div>
+                    <div class="hour">8:00 PM</div>
+                </div>
+
+                <div class="timeline-events" id="timelineEvents">
+                    <!-- Classes will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Class Details Modal -->
+    <div class="modal" id="classModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="class-type-badge" id="modalClassType">Yoga</div>
+                <button class="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <h2 id="modalTitle">Morning Yoga Flow</h2>
+                
+                <div class="class-details">
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Time</strong>
+                            <span id="modalTime">7:00 AM - 8:00 AM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-user"></i>
+                        <div>
+                            <strong>Instructor</strong>
+                            <span id="modalInstructor">Sarah Johnson</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Location</strong>
+                            <span id="modalLocation">Studio 2</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <strong>Capacity</strong>
+                            <span id="modalCapacity">12/15 spots</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="class-description">
+                    <h3>About This Class</h3>
+                    <p id="modalDescription">Start your day with energizing yoga poses and meditation. Perfect for all levels, this class will help you improve flexibility, build strength, and find inner peace.</p>
+                </div>
+
+                <div class="instructor-info">
+                    <img src="https://via.placeholder.com/50" alt="Instructor" class="instructor-image">
+                    <div>
+                        <h4>Your Instructor</h4>
+                        <p>Sarah is a certified yoga instructor with 5+ years of experience in teaching various yoga styles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="bookClass">
+                    <i class="fas fa-check"></i>
+                    Book Class
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="schedule.js"></script>
+</body>
+</html>

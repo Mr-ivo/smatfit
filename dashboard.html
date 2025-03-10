@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FitLife Gym</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="mobile-logo">FitLife</div>
+            <div class="user-initials">JD</div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <h1>FitLife</h1>
+                </div>
+                <button class="close-sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <div class="user-initials">JD</div>
+                </div>
+                <div class="user-info">
+                    <h3>John Doe</h3>
+                    <span class="membership-status premium">Premium Member</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#overview">
+                            <i class="fas fa-home"></i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="help-button">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Help Center</span>
+                </button>
+                <button class="logout-button">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="dashboard-content">
+                <!-- Welcome Section -->
+                <section class="welcome-section">
+                    <div class="welcome-message">
+                        <h1>Welcome back, John! 👋</h1>
+                        <p>Track your fitness journey and achieve your goals</p>
+                    </div>
+                    <div class="quick-actions">
+                        <button class="action-btn">
+                            <i class="fas fa-plus"></i>
+                            Book a Class
+                        </button>
+                        <button class="action-btn secondary">
+                            <i class="fas fa-user"></i>
+                            View Profile
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Stats Grid -->
+                <section class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon workout">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Weekly Workouts</h3>
+                            <p class="stat-value">12</p>
+                            <span class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                23% vs last week
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon calories">
+                            <i class="fas fa-burn"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Calories Burned</h3>
+                            <p class="stat-value">8,547</p>
+                            <span class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                12% vs last week
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon time">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Active Minutes</h3>
+                            <p class="stat-value">437</p>
+                            <span class="stat-change negative">
+                                <i class="fas fa-arrow-down"></i>
+                                5% vs last week
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon goals">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Goals Completed</h3>
+                            <p class="stat-value">7/10</p>
+                            <span class="stat-change neutral">
+                                On track
+                            </span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Upcoming Classes -->
+                <section class="upcoming-classes">
+                    <div class="section-header">
+                        <h2>Upcoming Classes</h2>
+                        <a href="schedule.html" class="view-all">View Schedule</a>
+                    </div>
+                    <div class="class-cards">
+                        <div class="class-card">
+                            <div class="class-time">
+                                <span class="day">Today</span>
+                                <span class="time">10:00 AM</span>
+                            </div>
+                            <div class="class-info">
+                                <h3>HIIT Training</h3>
+                                <p>with Mike Thompson</p>
+                                <span class="class-duration">
+                                    <i class="fas fa-clock"></i> 45 min
+                                </span>
+                            </div>
+                            <button class="join-class">Join Now</button>
+                        </div>
+
+                        <div class="class-card">
+                            <div class="class-time">
+                                <span class="day">Tomorrow</span>
+                                <span class="time">2:30 PM</span>
+                            </div>
+                            <div class="class-info">
+                                <h3>Yoga Flow</h3>
+                                <p>with Sarah Johnson</p>
+                                <span class="class-duration">
+                                    <i class="fas fa-clock"></i> 60 min
+                                </span>
+                            </div>
+                            <button class="join-class">Join Now</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Progress Charts -->
+                <section class="progress-section">
+                    <div class="section-header">
+                        <h2>Your Progress</h2>
+                        <div class="chart-filters">
+                            <button class="active">Week</button>
+                            <button>Month</button>
+                            <button>Year</button>
+                        </div>
+                    </div>
+                    <div class="charts-container">
+                        <div class="chart-card">
+                            <h3>Workout Activity</h3>
+                            <div class="chart" id="workoutChart"></div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Goal Progress</h3>
+                            <div class="chart" id="goalChart"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Nutrition Tracking -->
+                <section class="nutrition-section">
+                    <div class="section-header">
+                        <h2>Nutrition Overview</h2>
+                        <button class="add-meal">
+                            <i class="fas fa-plus"></i>
+                            Add Meal
+                        </button>
+                    </div>
+                    <div class="nutrition-grid">
+                        <div class="nutrition-card">
+                            <div class="nutrition-header">
+                                <h3>Calories</h3>
+                                <div class="nutrition-progress">
+                                    <svg>
+                                        <circle cx="40" cy="40" r="35"></circle>
+                                        <circle cx="40" cy="40" r="35" style="stroke-dashoffset: calc(220 - (220 * 75) / 100);"></circle>
+                                    </svg>
+                                    <div class="percentage">75%</div>
+                                </div>
+                            </div>
+                            <div class="nutrition-stats">
+                                <span>1,500 / 2,000</span>
+                                <span class="label">kcal</span>
+                            </div>
+                        </div>
+
+                        <div class="nutrition-card">
+                            <div class="nutrition-header">
+                                <h3>Protein</h3>
+                                <div class="nutrition-progress">
+                                    <svg>
+                                        <circle cx="40" cy="40" r="35"></circle>
+                                        <circle cx="40" cy="40" r="35" style="stroke-dashoffset: calc(220 - (220 * 60) / 100);"></circle>
+                                    </svg>
+                                    <div class="percentage">60%</div>
+                                </div>
+                            </div>
+                            <div class="nutrition-stats">
+                                <span>90 / 150</span>
+                                <span class="label">grams</span>
+                            </div>
+                        </div>
+
+                        <div class="nutrition-card">
+                            <div class="nutrition-header">
+                                <h3>Carbs</h3>
+                                <div class="nutrition-progress">
+                                    <svg>
+                                        <circle cx="40" cy="40" r="35"></circle>
+                                        <circle cx="40" cy="40" r="35" style="stroke-dashoffset: calc(220 - (220 * 45) / 100);"></circle>
+                                    </svg>
+                                    <div class="percentage">45%</div>
+                                </div>
+                            </div>
+                            <div class="nutrition-stats">
+                                <span>112 / 250</span>
+                                <span class="label">grams</span>
+                            </div>
+                        </div>
+
+                        <div class="nutrition-card">
+                            <div class="nutrition-header">
+                                <h3>Fats</h3>
+                                <div class="nutrition-progress">
+                                    <svg>
+                                        <circle cx="40" cy="40" r="35"></circle>
+                                        <circle cx="40" cy="40" r="35" style="stroke-dashoffset: calc(220 - (220 * 80) / 100);"></circle>
+                                    </svg>
+                                    <div class="percentage">80%</div>
+                                </div>
+                            </div>
+                            <div class="nutrition-stats">
+                                <span>48 / 60</span>
+                                <span class="label">grams</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Charts.js for progress charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

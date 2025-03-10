@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Plans - FitLife Gym</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>FitLife</h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="payment.html" class="active">Plans</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="payment-container">
+        <section class="plans-section">
+            <h2>Choose Your Membership Plan</h2>
+            <div class="plans-grid">
+                <div class="plan-card" data-plan="monthly">
+                    <div class="plan-header">
+                        <h3>Monthly Plan</h3>
+                        <div class="price">
+                            <span class="amount">$49</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Full Gym Access</li>
+                        <li><i class="fas fa-check"></i> Group Classes</li>
+                        <li><i class="fas fa-check"></i> Locker Access</li>
+                        <li><i class="fas fa-check"></i> Fitness Assessment</li>
+                    </ul>
+                    <button class="select-plan-btn">Select Plan</button>
+                </div>
+
+                <div class="plan-card featured" data-plan="yearly">
+                    <div class="popular-tag">Most Popular</div>
+                    <div class="plan-header">
+                        <h3>Yearly Plan</h3>
+                        <div class="price">
+                            <span class="amount">$39</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <div class="savings">Save $120 yearly</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> All Monthly Plan Features</li>
+                        <li><i class="fas fa-check"></i> Personal Trainer Session</li>
+                        <li><i class="fas fa-check"></i> Nutrition Consultation</li>
+                        <li><i class="fas fa-check"></i> Guest Passes (2/month)</li>
+                    </ul>
+                    <button class="select-plan-btn">Select Plan</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="checkout-section" id="checkoutSection">
+            <h2>Secure Checkout</h2>
+            <div class="checkout-container">
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="selected-plan">
+                        <span id="planName">Monthly Plan</span>
+                        <span id="planPrice">Caf5000/month</span>
+                    </div>
+                    <div class="total">
+                        <span>Total</span>
+                        <span id="totalAmount">Caf50.000</span>
+                    </div>
+                </div>
+
+                <form id="paymentForm" class="payment-form">
+                    <div class="form-group">
+                        <label for="cardName">Name on Card</label>
+                        <input type="text" id="cardName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <div class="card-input-wrapper">
+                            <input type="text" id="cardNumber" maxlength="19" required>
+                            <div class="card-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-amex"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiryDate">Expiry Date</label>
+                            <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" maxlength="4" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="billingAddress">Billing Address</label>
+                        <input type="text" id="billingAddress" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">ZIP Code</label>
+                            <input type="text" id="zipCode" required>
+                        </div>
+                    </div>
+
+                    <div class="secure-payment">
+                        <i class="fas fa-lock"></i>
+                        <span>Your payment is secure and encrypted</span>
+                    </div>
+
+                    <button type="submit" class="pay-now-btn">
+                        <span>Pay Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="payment.js"></script>
+</body>
+</html>
